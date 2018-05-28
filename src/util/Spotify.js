@@ -10,7 +10,7 @@ Client ID b26b14fd92a7414bad09d7697d44a678
 const clientId = 'b26b14fd92a7414bad09d7697d44a678';
 const redirectURL = 'http://localhost:3000/';
 
-Spotify =  {
+const Spotify =  {
 //   clientId = 'b26b14fd92a7414bad09d7697d44a678';
 //   redirectURL = 'http://localhost:3000/';
    
