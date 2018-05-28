@@ -5,14 +5,14 @@ Client ID b26b14fd92a7414bad09d7697d44a678
 
 */
 
-import React, { Component } from 'react';
+//import React, { Component } from 'react';
 
-//const clientId = 'b26b14fd92a7414bad09d7697d44a678';
-//const redirectURL = 'http://localhost:3000/';
+const clientId = 'b26b14fd92a7414bad09d7697d44a678';
+const redirectURL = 'http://localhost:3000/';
 
-class Spotify extends Component {
-   clientId = 'b26b14fd92a7414bad09d7697d44a678';
-   redirectURL = 'http://localhost:3000/';
+Spotify =  {
+//   clientId = 'b26b14fd92a7414bad09d7697d44a678';
+//   redirectURL = 'http://localhost:3000/';
    
    getAccessToken (accessToken) {
       let expiresAt = '';
@@ -50,7 +50,7 @@ class Spotify extends Component {
             window.location(withRedirectURL);
 		 }  //end accToken empty IF
 	  } // end accessToken IF
-   } // end of getAccessToken method
+   }, // end of getAccessToken method
 
    search(searchTerm) {
        const tempURL = 'https://api.spotify.com/v1/search?type=track&q=TERM';
@@ -74,7 +74,7 @@ class Spotify extends Component {
    networkError => {
       console.log(networkError.message);
    }).then(jsonResponse => jsonResponse);
-  } //end of search method
+  }, //end of search method
    
   savePlaylist(playListName, trackURI) {
      if (playListName.length === 0  &&  trackURI.legth === 0) {
@@ -122,25 +122,9 @@ class Spotify extends Component {
      networkError => {
         console.log(networkError.message);
      }).then(jsonResponse => jsonResponse);
-     
-     
   
-  //   const tempURL = 'https://api.spotify.com/v1/search?type=track&q=TERM';
-
-//	 const apiURL = tempURL.replace('TERM', searchTerm);
-   
-//       fetch(tempURL, headers).then(response => { 
-
-  } 
-   
-   
-  render() {
-    return (
-       <div className="TrackList">
-       </div>
-    );
-  }
+  },  //end of savePlaylist
+ 
 }
 
-export default Spotify ;
-
+export default Spotify;
