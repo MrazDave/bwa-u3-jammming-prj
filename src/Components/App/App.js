@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-//import logo from './logo.svg';
 import './App.css';
 import {SearchBar} from '../../Components/SearchBar/SearchBar';
 import {Spotify}  from '../../util/Spotify';
@@ -34,20 +33,16 @@ class App extends Component {
       this.setState(this.state.playlistName: (name));
   }  //end of updatePlaylistName
   
-  savePlayList() {
+  savePlayList(playListName, trackURI) {
      let uriArray = [];
      this.state.playlistTracks.forEach(track => { uriArray.push(track.uri) })
-     return uriArray;
+	 return this.Spotify.savePlaylist(playListName, uriArray)
   }  //end of savePlayList
   
   search(term) {
 	 return this.Spotify.search(term);
   }  //end of search
-  
-  
-  savePlaylist (playlistname, trackURI) {
-  
-  }  //end of savePlaylist
+
   
   render() {
     return (
@@ -79,24 +74,3 @@ class App extends Component {
 
 export default App;
 
-/*
-        //  <img src={logo} className="App-logo" alt="logo" />
-
-        class App extends Component {
-  render() {
-    return (
-       <div>
-         <h1>Ja<span className="highlight">mmm</span>ing</h1>
-         <div className="App">
-        //   <!-- Add a SearchBar component -->
-           <div className="App-playlist">
-       //      <!-- Add a SearchResults component -->
-       //      <!-- Add a Playlist component -->
-           </div>
-         </div>
-       </div>
-    );
-  }
-}
-
-*/
